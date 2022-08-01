@@ -30,10 +30,16 @@ public class BlackHoleCalc {
 		
 		System.out.print("\n" + "Mass of " + obj_Name + " must be compressed to " + volumeOfObjBlckHole + " cubic meters"+"\n"+" in order to create a blackhole."+"\n");
 		
-		if(volumeOfObjBlckHole < 3.9E-32){ System.out.println("\n"+"Black Hole Scale: Smaller Than A Hydrogen Atom.");}
+		if(volumeOfObjBlckHole < 1.1E-28){ System.out.println("\n"+"Black Hole Scale: Smaller Than A Francium Atom.");}
+		
+		else if(volumeOfObjBlckHole < 3.14E-22){System.out.println("\n"+"Black Hole Scale: Smaller than Coronavirus."); }
+		
 		else if(volumeOfObjBlckHole < 4.5E-16){System.out.println("\n"+"Black Hole Scale: Smaller than A Human Red Blood Cell."); }
+		
 		else if(volumeOfObjBlckHole < 3.4E-7){System.out.println("\n"+"Black Hole Scale: Smailler Than A Single Skittle Candy."); }
+		
 		else if(volumeOfObjBlckHole < 4.1E-5){System.out.println("\n"+"Black Hole Scale: Smaller Than A Golf Ball."); }
+		
 		else{System.out.println("\n"+"Black Hole Scale: Larger Than A Golf Ball.");}
 
 	}
