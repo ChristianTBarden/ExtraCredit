@@ -6,7 +6,7 @@ public class BlackHoleCalc {
 		
 		System.out.print("##Object Black Hole Calculator##");
 		
-	    System.out.println("\n" + "|This program displays the voulume that an earth bound object must be compressed to," + "\n" + "in order to create a black hole and gives its mass in kilograms and gives a reference to scale created black hole|");
+	    System.out.println("\n" + "|This program displays the radius that an object must be compressed to," + "\n" + "in order to create a black hole and gives its mass in kilograms and gives a reference to scale created black hole|");
 	 
 	    System.out.println("All you need to do is enter the object's name and weight(in pounds) as instructed" + "\n");
 	 
@@ -23,22 +23,29 @@ public class BlackHoleCalc {
 		Double ObjNewtonConvert = (Objweight_InPounds/.225);
 		//2
 		Double ObjMassKg = (ObjNewtonConvert/9.8);
-		//3
-		Double volumeOfObjBlckHole = ObjMassKg/(2 * Math.pow(10, 19));
+		//3 I've Utilized the ScwarzchildRadius formula for accuracy. It's straight out a physics textbook;
+		Double ScwarzchildRadiusOfObjBlckHole = (2*(6.67 * Math.pow(10, -8))*(ObjMassKg))/Math.pow(2.9*Math.pow(10, 8),2);
 		       
 		System.out.print("\n" + "Mass of Object: " + ObjMassKg + " kg" + "\n");
 		
-		System.out.print("\n" + "Mass of " + obj_Name + " must be compressed to " + volumeOfObjBlckHole + " cubic meters"+"\n"+" in order to create a blackhole."+"\n");
+		System.out.print("\n" + "Object's Schwarzschild radius: " + ScwarzchildRadiusOfObjBlckHole + " mm " + "\n");
 		
-		if(volumeOfObjBlckHole < 1.1E-28){ System.out.println("\n"+"Black Hole Scale: Smaller Than A Francium Atom.");}
+		System.out.print("\n" + "Mass of " + obj_Name + " must be compressed to a radius less than " + ScwarzchildRadiusOfObjBlckHole + " millimeters "+"\n"+"in order to create a blackhole."+"\n");
+				
 		
-		else if(volumeOfObjBlckHole < 3.14E-22){System.out.println("\n"+"Black Hole Scale: Smaller than Coronavirus."); }
+		if(ScwarzchildRadiusOfObjBlckHole < 1E-11){System.out.println("\n"+"Black Hole Scale: Smaller Than A proton's Radius."); }
+	    
+		else if(ScwarzchildRadiusOfObjBlckHole < 5.3E-8){ System.out.println("\n"+"Black Hole Scale: Smaller Than A Hydrogen Atom's Radius.");}
 		
-		else if(volumeOfObjBlckHole < 4.5E-16){System.out.println("\n"+"Black Hole Scale: Smaller than A Human Red Blood Cell."); }
+		else if(ScwarzchildRadiusOfObjBlckHole < .0009){System.out.println("\n"+"Black Hole Scale: Smaller than Coronavirus Radius."); }
 		
-		else if(volumeOfObjBlckHole < 3.4E-7){System.out.println("\n"+"Black Hole Scale: Smailler Than A Single Skittle Candy."); }
+		else if(ScwarzchildRadiusOfObjBlckHole < .0075){System.out.println("\n"+"Black Hole Scale: Smaller than A Human Red Blood Cell Radius."); }
 		
-		else if(volumeOfObjBlckHole < 4.1E-5){System.out.println("\n"+"Black Hole Scale: Smaller Than A Golf Ball."); }
+		else if(ScwarzchildRadiusOfObjBlckHole < 6.35 ){System.out.println("\n"+"Black Hole Scale: Smailler Than A Single Skittle Candy Radius."); }
+		
+		else if(ScwarzchildRadiusOfObjBlckHole < 24.26){System.out.println("\n"+"Black Hole Scale: Smaller Than A U.S. Quater's Radius."+ "."); }
+		
+		else if(ScwarzchildRadiusOfObjBlckHole < 203.3){System.out.println("\n"+"Black Hole Scale: Smaller Than A Golf Ball's Radius."+ "."); }
 		
 		else{System.out.println("\n"+"Black Hole Scale: Larger Than A Golf Ball.");}
 
